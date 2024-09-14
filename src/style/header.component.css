@@ -1,0 +1,13 @@
+#header-container{
+    position: fixed;
+    color: white;
+    text-align: center;
+    background-color: rgba(162, 185, 188, 0.4);
+    top: 0;
+    width: 100%;
+}
+
+#header-container p{
+    margin-top: 2.5px;
+    font-size: 35px;
+}

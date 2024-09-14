@@ -24,10 +24,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+                
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/style/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

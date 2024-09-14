@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease; /* Animácia pre šírku */
+  }
+  
+  #background-video.videomove {
+    left: calc(50% + 300px); /* Použite calc na výpočty */
+    transition: left 0.3s ease; /* Animácia pre pozíciu */
+  }
+  
+  .side-nav-container {
+    position: fixed;
+    width: 100px;
+    height: 100vh; 
+    background-color: #eeedbe; 
+    transition: width 0.3s ease;
+    z-index: 1; /* Uistite sa, že je nad videom */
+  }
+  
+  .side-nav-container.expanded {
+    width: 500px; /* Nová šírka po rozšírení */
+  }
+  
+  .side-nav-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .menu-button {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .side-nav-box fa-icon {
+    font-size: 50px;
+  }
+  

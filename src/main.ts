@@ -1,6 +1,9 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { importProvidersFrom, inject } from '@angular/core';
 import { AppComponent } from './app/app.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [importProvidersFrom(FontAwesomeModule)]
+}).catch(err => console.error(err));

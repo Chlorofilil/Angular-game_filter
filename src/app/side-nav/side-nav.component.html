@@ -1,0 +1,35 @@
+<div class="container" >
+  <div class="side-nav-menu" [ngClass]="{'expanded': isExpanded}">
+    <div class="menu-nav">
+      <!-- MAIN BTN/ICON -->
+      <button (click)="onButtonClickMenu()" class="menu-button">
+        <fa-icon [icon]="faGamepad"></fa-icon>
+      </button>
+    </div>
+    <div class="game-btns-container" [ngClass]="{'showGames': isExpanded}">
+      <!-- SNAKE GAME -->
+      <button class="game-btn btn">Snake</button>
+      <!-- GAMES FROM "API"-->
+      <button *ngFor="let game of getFilteredGames()" class="game-btn btn" (click)="gameSelection(game)">
+        {{ game.name }}
+      </button>
+    </div> 
+  </div>
+  <!-- FILTER WALL AND BTNS -->
+  <div class="side-nav-filter" [ngClass]="{'showFilterBtn': isExpanded, 'showGanreBtns': filterExpanded}">
+      <!-- FILTER BTN -->
+      <div class="filter-btn">
+        <button (click)="onButtonClickFilter()" class="btn">Filter</button>
+      </div>
+      <!-- GANRES BTNS -->
+      <app-filter-buttons
+        [genres]="genres"
+        [selectedGenres]="filterService.filterSelect"
+        (toggleGenre)="toggleGanreSelection($event)">
+      </app-filter-buttons>
+    </div> 
+</div>
+  <!-- SHOW SELECTED GAME -->
+  <div *ngIf="selectedGame" class="selected-game-display">
+    <h1>{{ selectedGame }}</h1>
+  </div>
