@@ -20,10 +20,12 @@ export class FilterButtonsComponent {
   @Input() selectedGenres: Set<string> = new Set<string>();
   @Output() toggleGenre = new EventEmitter<string>();
 
+  //send chosen genre
   onToggleGenre(genre: string) {
     this.toggleGenre.emit(genre);
   }
 
+  //Control active status
   isSelected(genre: string): boolean {
     return this.selectedGenres.has(genre);
   }

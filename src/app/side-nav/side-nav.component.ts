@@ -26,7 +26,7 @@ export class SideNavComponent implements OnInit {
 
   //Load games
   ngOnInit(): void {
-    this.games = this.gameListService.getGames();
+    this.gameListService.getGames().subscribe(data => this.games = data);
   }
 
   //Main, first btn

@@ -84,6 +84,7 @@
 .side-nav-filter.showFilterBtn {
   opacity: 1;
   height: 100px;
+  z-index: 5;
 }
 
 .filter-btn{
